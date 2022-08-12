@@ -24,9 +24,10 @@ public class ParkingController {
 	}
 	
 	@GetMapping
-	public List<Parking> findAll(){
+	public List<ParkingDTO> findAll(){
 		List<Parking> parkingList = service.findAll();
 		List<ParkingDTO> result = parkingMapper.toParkingDTOList(parkingList);
+		return result;
 	}
 
 }
